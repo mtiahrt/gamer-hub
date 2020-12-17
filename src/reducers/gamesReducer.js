@@ -1,7 +1,7 @@
 const initState = {
     popular: [],
     newGames: [],
-    upcoming: [],
+    upComing: [],
     searched: [],
   };
   
@@ -12,7 +12,7 @@ const initState = {
             ...state, 
             popular: action.payload.popular,
             newGames: action.payload.new,
-            upcoming: action.payload.upcoming
+            upComing: action.payload.upComing
         };
       default:
         return { ...state };
