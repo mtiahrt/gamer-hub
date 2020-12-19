@@ -5,9 +5,12 @@ import { loadGames } from "../actions/gamesAction";
 import Game from '../components/Game';
 import styled from "styled-components";
 import {motion} from 'framer-motion';
+import {useLocation} from 'react-router-dom';
 
 
 const Home = () => {
+    const location = useLocation();
+    const pathId = location.pathname.split('/')[2];
     const dispatch = useDispatch();
     useEffect(() => {
       dispatch(loadGames());
@@ -16,7 +19,7 @@ const Home = () => {
     const {popular, newGames, upComing} = useSelector(state => state.games);
     return (
         <GameList>
-            <GameDetail />
+            {pathId && <GameDetail />}
             <h2>Upcoming Games</h2>
                 <Games>
                     {upComing.map(game => (
