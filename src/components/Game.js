@@ -15,11 +15,11 @@ const Game = ({name, released, image, id}) => {
         dispatch(loadDetail(id));
     }
     return (
-        <StyleGame onClick={loadDetaiHandler}>
+        <StyleGame layoutId={id.toString()} onClick={loadDetaiHandler}>
             <Link to={`/game/${id}`}>
-                <h3>{name}</h3>
+                <motion.h3 layoutId={`title${id.toString()}`}>{name}</motion.h3>
                 <p>{released}</p>            
-                <img src={smallImage(image, 640)}
+                <motion.img layoutId={`image${id.toString()}`} src={smallImage(image, 640)}
                      alt={name} /> 
             </Link>
         </StyleGame>
