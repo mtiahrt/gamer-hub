@@ -61,8 +61,8 @@ const GameDetail = ({pathId}) => {
   return (
     <>
     {!isLoading && (
-    <CardShadow className='shadow' onClick={exitDetailHandler}>
-      <Detail layoutId={pathId}>
+    <StyleCard className='shadow' onClick={exitDetailHandler}>
+      <StyledDetail layoutId={pathId}>
         <Stats>
           <div className="rating">
             <motion.h3 layoutId={`title${pathId}`}>{game.name}</motion.h3>
@@ -97,14 +97,14 @@ const GameDetail = ({pathId}) => {
               alt={screen.image} />
           ))}
         </div>
-      </Detail>
-    </CardShadow>
+      </StyledDetail>
+    </StyleCard>
     )}
     </>
   );
 };
 
-const CardShadow = styled(motion.div)`
+const StyleCard = styled(motion.div)`
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
@@ -124,7 +124,7 @@ const CardShadow = styled(motion.div)`
   }
 `;
 
-const Detail = styled(motion.div)`
+const StyledDetail = styled(motion.div)`
   width: 80%;
   border-radius: 1rem;
   padding: 2rem 5rem;
