@@ -14,6 +14,16 @@ const initState = {
             newGames: action.payload.new,
             upComing: action.payload.upComing
         };
+      case "FETCH_SEARCHED" :
+        return {
+          ...state,
+          searched: action.payload.searched,
+        };
+        case "CLEAR_SEARCHED":
+          return {
+            ...state,
+            searched: [],
+          }
       default:
         return { ...state };
     }
